@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 =====>创建一个 Vue 实例 </title>
+    <!-- 生产环境版本，优化了尺寸和速度 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+
+</head>
+
+<body>
+     <h1 style="text-align: center">Vue 实例</h1>
+    <div id="t" style="text-align: left; background-color: seashell">
+        <span style="color: red">1.获取test属性值</span>
+        <p>a=====>{{test.a}}</p>
+
+        <span style="color: red">2.判断vm实例与原有对象的值是否相等</span>
+        <p>{{vm.test.a === testData.a}}</p>
+
+        <span style="color: red">3.vm实例为b属性赋值</span>
+        <p>b=====>{{b}}</p>
+
+        <span style="color: red">3.点击事件改变b的值</span>
+        <button v-on:click="ChangeB">点击</button><br />
+
+        <span style="color: red">4.数组的值</span>
+        <p>list数组=======>{{list}}</p>
+
+        <span style="color: red">5.数组循环</span>
+        <ol>
+            <li v-for="name in list">
+                {{ name }}
+            </li>
+        </ol>
+
+        <span style="color: red">6.点击事件改变list值</span>
+        <button v-on:click="changeMessage">点击</button><br/>
+
+        <span style="color: red">7.Object.freeze()阻止修改现有的属性</span><br/>
+        <span style="color: red">8.Vue实例的属性方法前缀$</span>
+        <p>{{vm.$data.test === testData}}</p>
+        <p>{{vm.$el === document.getElementById('t')}}</p>
+    </div>
+
+    <script>
+        var testData = {
+            a: "数据变化"
+        };
+        // Object.freeze(obj)
+        // Object.freeze(testData);
+        // 创建vue实例 每个 Vue 应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的
+        var vm = new Vue({
+            el: '#t',
+            // data相当于在React中的state可以通过改变state状态而重新渲染
+            data: {
+                test: testData,
+                b: '',
+                list: ['小包', '小车'],
+            },
+            methods: {
+                changeMessage: function () {
+                    this.list = this.list.join(',');
+                }
+            }
+        });
+        testData.a = "数据";
+
+        // 只有当实例被创建时 data 中存在的属性才是响应式的
+        // 改变data中test属性中的key(a)
+        vm.test.a = "数据2";
+
+        // 为初始的b属性赋值
+        vm.b = "b的赋值测试";
+
+        // 按钮点击事件b属性值变化
+        function ChangeB() {
+            // vm.b = "点击后的B数据变化";
+            vm.b = vm.list.join('@');
+        }
+        
+    </script>
+</body>
+
+</html>

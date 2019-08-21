@@ -16,7 +16,8 @@
 <body>
     <div id="app-5">
         <p>{{ message }}</p>
-        <button v-on:click="reverseMessage">反转消息</button>
+        <!-- 简写 v-on:click    ====== @click     -->
+        <button @click="reverseMessage">反转消息</button>
     </div>
     <script>
         var app5 = new Vue({

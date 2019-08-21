@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 =====>模板语法 </title>
+    <!-- 生产环境版本，优化了尺寸和速度 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+
+</head>
+
+<body>
+    <h1 style="text-align: center">模板语法</h1>
+    <div id="rootid">
+        <p style="color: red">1.v-once 指令，执行一次性地插值</p>
+        <p v-once> {{id}}</p>
+        <p style="color: red">2.双大括号会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，使用 v-html 指令</p>
+        <p>{{id}}:<span v-html="rawHtml"></span></p>
+        <p style="color:red">3.s动态参数(在 DOM 中使用模板时你需要回避大写键名)</p>
+        <button v-on:[Test]="onClick">点击</button>
+        <P style="color: red">4.修饰符(.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault())</P>
+        <p>{{exd}}</p>
+        <p>5.缩写</p>
+        
+    </div>
+
+    <script>
+        var vuedata = {
+            id: '122333',
+            rawHtml: '<span style="color: red">这里应该是红色</span>',
+            test: 'click',
+            exd: '<form v-on:submit.prevent="onSubmit">...</form>',
+        }
+        var vm = new Vue({
+            el: '#rootid',
+            data: vuedata,
+        });
+
+        function onClick() {
+            alert('点击');
+        }
+    </script>
+</body>
+
+</html>
