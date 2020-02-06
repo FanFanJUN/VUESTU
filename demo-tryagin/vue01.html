@@ -1,0 +1,49 @@
+<!-- Vscode安装HTML Snippets 英文! enter键即显示html模板 如下 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue01-</title>
+    <!-- 引入Vue包 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+</head>
+<body>
+    <div id="app">
+       <div>{{test}},helloword</div>
+       <span>{{getName()}}</span>
+       <span>{{getSecName()}}</span>
+    </div>
+    <!-- 创建Vue实例挂载在app节点上 -->
+    <script>
+        const secName = 'haha';
+        const testData = { test: 'Vue' };
+        new Vue({
+            el: '#app',
+            // data 用于定义属性
+            data: {
+                test: 'Vue',
+            },
+            // methods 用于定义的函数，可以通过 return 来返回函数值。
+            methods: {
+                getName: function() {
+                    return this.test + "licai";
+                },
+                getSecName: ()=>{
+                    return secName + "licai2";
+                },
+            }
+        })
+    </script>
+    <!-- document.write(vm.$data === testData) // true -->
+    <!-- 快捷键  div>ul>li*3>input -->
+    <div>
+        <ul>
+            <li><input type="text"></li>
+            <li><input type="text"></li>
+            <li><input type="text"></li>
+        </ul>
+    </div>
+</body>
+</html>

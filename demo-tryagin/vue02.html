@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-html指令</title>
+    <!-- 引入Vue包 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+</head>
+<body>
+    <div id="app">
+        <div v-html="testHtml"></div>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+            testHtml: '<h1>html文本</h1>'
+        },
+      })
+    </script>
+</body>
+</html>
