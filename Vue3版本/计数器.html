@@ -1,0 +1,45 @@
+<!--
+ * @Author       : LiCai
+ * @connect      : 1981824361@qq.com
+ * @Date         : 2021-08-13 11:02:34
+ * @LastEditors  : LiCai
+ * @LastEditTime : 2021-08-13 11:06:56
+ * @Description  : 计数器
+ * @FilePath     : /VUESTU/Vue3版本/计数器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计数器</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id='app'>
+        <button @click='decrease'>-</button>
+        <span>{{number}}</span>
+        <button @click='incrate'>+</button>
+    </div>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    number: 0,
+                }
+            },
+            methods: {
+                decrease() {
+                    if(this.number > 0) {
+                        this.number--;
+                    }
+                },
+                incrate() {
+                    this.number++;
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!--
+ * @Author       : LiCai
+ * @connect      : 1981824361@qq.com
+ * @Date         : 2021-08-13 10:44:51
+ * @LastEditors  : LiCai
+ * @LastEditTime : 2021-08-13 11:01:59
+ * @Description  : TODO
+ * @FilePath     : /VUESTU/Vue3版本/v指令绑定-02.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性绑定</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <span v-bind:title="title" v-on:click='showData'>{{msg}}</span>
+        <br/>
+        <p>简写指令如下：</p>
+        <span :title="title" @click='showData'>{{msg}}</span>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    msg: 'hello Vue3学习',
+                    title: 'hello title',
+                }
+            },
+            methods: {
+                showData() {
+                    alert('hello Vue3， 事件绑定');
+                } 
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+
+</html>

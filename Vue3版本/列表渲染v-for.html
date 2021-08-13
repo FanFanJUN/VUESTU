@@ -1,0 +1,46 @@
+<!--
+ * @Author       : LiCai
+ * @connect      : 1981824361@qq.com
+ * @Date         : 2021-08-13 11:13:21
+ * @LastEditors  : LiCai
+ * @LastEditTime : 2021-08-13 11:22:54
+ * @Description  : TODO
+ * @FilePath     : /VUESTU/Vue3版本/列表渲染v-for.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表渲染 v-for循环</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id='app'>
+        <ul v-for='item in list'>
+            <li>{{item.name}}, 价格: {{item.price}}</li>
+        </ul>
+        <button @click='add'>添加</button>
+    </div>
+    <script>
+        const App = Vue.createApp({
+            data(){
+                return { list: [
+                    {name: '香蕉', price: 1},
+                    {name: '苹果', price: 2},
+                    {name: '橘子', price: 3},
+                ] }
+            },
+            methods: {
+                add() {
+                    this.list.push({
+                        name: `${Math.random()}随机`,
+                        price: Math.random()
+                    })
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

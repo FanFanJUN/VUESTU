@@ -1,0 +1,31 @@
+<!--
+ * @Author       : LiCai
+ * @connect      : 1981824361@qq.com
+ * @Date         : 2021-08-13 10:23:40
+ * @LastEditors  : LiCai
+ * @LastEditTime : 2021-08-13 10:42:52
+ * @Description  : 引入Vue3
+ * @FilePath     : /VUESTU/Vue3版本/helloword-01.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绑定文本</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id='app'>{{ hello }}</div>
+    <script>
+        const App = Vue.createApp({
+            data(){
+                return { hello: 'hello Vue3' }
+            }
+        })
+      const vm =   App.mount('#app');
+      console.log(vm.hello);
+    </script>
+</body>
+</html>

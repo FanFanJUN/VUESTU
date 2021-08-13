@@ -1,0 +1,45 @@
+<!--
+ * @Author       : LiCai
+ * @connect      : 1981824361@qq.com
+ * @Date         : 2021-08-13 14:25:44
+ * @LastEditors  : LiCai
+ * @LastEditTime : 2021-08-13 14:37:03
+ * @Description  : 局部注册
+ * @FilePath     : /VUESTU/Vue3版本/组件-局部注册.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>局部组件</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <!-- 局部组件注册，注册A即可使用 -->
+    <div id='app'>
+        <Hello></Hello>
+        <Count></Count>
+    </div>
+    <script>
+        const Count = {
+            template: `<h1>count 组件</h1>`
+        }
+        const Hello = {
+            components: {
+                Count
+            },
+            template: `<h1>hello 组件</h1> <Count></Count>`
+        }
+        /* 全局组件注册 */
+        const app = Vue.createApp({
+            components: {
+                Hello,
+                Count,
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

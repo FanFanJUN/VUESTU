@@ -1,0 +1,59 @@
+<!--
+ * @Author       : LiCai
+ * @connect      : 1981824361@qq.com
+ * @Date         : 2021-08-13 13:45:40
+ * @LastEditors  : LiCai
+ * @LastEditTime : 2021-08-13 14:10:58
+ * @Description  : 组件实例
+ * @FilePath     : /VUESTU/Vue3版本/组件实例及复用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件实例， 通过 Prop 向子组件传递数据  组件嵌套 </title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id='app'>
+        <Hello name='组件一' ></Hello>
+        <br/>
+        <Hello name='组件二' ></Hello>
+        <br/>
+        <Hello name='组件三' ></Hello>
+        <br/>
+        <Hello name='组件四' ></Hello>
+    </div>
+    <script>
+      const app =   Vue.createApp({
+            data() {
+
+            }
+        })
+      app.component('Hello', {
+          data() {
+              return {
+                  count: 0
+              }
+          },
+          props: ['name'],
+          methods: {
+              add() {
+                  this.count++;
+              }
+          },
+          template: `<button @click="add">
+            You clicked me {{ count }} times. {{name}}
+            </button>
+            <SmallTitle></SmallTitle>
+            `
+      })
+      app.component('SmallTitle', {
+        template: `<span>小组件</spam>`
+      })
+      app.mount('#app');  
+    </script>
+</body>
+</html>
