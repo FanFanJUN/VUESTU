@@ -1,6 +1,8 @@
 # [Vue 2.x官网](https://cn.vuejs.org/)
 # [Vue 3.x官网](https://v3.cn.vuejs.org/)
 
+# [Vue.js 开发的标准工具-VueCli](https://cli.vuejs.org/zh/)
+# [下一代前端开发与构建工具-vite](https://cn.vitejs.dev/)
 ### Vue 3.x
 - [Vue3.0全家桶最全入门指南 - 快速搭建 (1/4)](https://juejin.cn/post/6867114456762679309)
 
