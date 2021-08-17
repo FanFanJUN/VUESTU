@@ -15,6 +15,7 @@
 
 - [Vue3.0全家桶最全入门指南 - 3.x跟2.x的其他差异 (4/4)](https://juejin.cn/post/6867123749565497358)
 ### [拿下vue3你要做好这些准备](https://juejin.cn/post/6866373381424414734)
+### [vite2 + Vue3 项目](https://github.com.cnpmjs.org/57code/vite2-in-action.git)
 ###### other
 - Vscode安装HTML Snippets 英文! enter键即显示html模板
 - div>ul>li*3>input
