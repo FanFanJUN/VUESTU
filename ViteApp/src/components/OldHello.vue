@@ -3,8 +3,8 @@
  * @connect      : 1981824361@qq.com
  * @Date         : 2021-08-16 11:23:57
  * @LastEditors  : LiCai
- * @LastEditTime : 2021-08-16 11:30:42
- * @Description  : Vue 2写法
+ * @LastEditTime : 2021-08-18 09:19:12
+ * @Description  : Vue 2写法   option API
  * @FilePath     : /VUESTU/ViteApp/src/components/OldHello.vue
 -->
 <template>

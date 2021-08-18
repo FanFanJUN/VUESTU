@@ -3,16 +3,18 @@
  * @connect      : 1981824361@qq.com
  * @Date         : 2021-08-13 15:07:16
  * @LastEditors  : LiCai
- * @LastEditTime : 2021-08-16 14:23:50
- * @Description  : vue 3
+ * @LastEditTime : 2021-08-18 10:44:50
+ * @Description  : vue 3  composition API
  * @FilePath     : /VUESTU/VuecliProject/src/components/HelloWorld.vue
 -->
 <template>
   <div class="hello">
+    <span @click="sayHello">点击弹出</span>
     <h1>{{ msg }}</h1>
     <h1>{{ counter }} from setup-> reactive</h1>
     <h1>{{ counterMax }} from setup-> reactive-> computed</h1>
     <p ref='desc'>{{ref元素引用}}</p>
+    <p @click="changeTest"> {{state.test}}</p>
   </div>
 </template>
 
@@ -30,13 +32,26 @@ export default {
     
     const {counter, counterMax} = useCounter();
 
+    const state = reactive({
+      test: '测试reactive'
+    })
+
     // 使用元素引用
     const desc = ref(null);
     watch(counter, (val, oldVal)=> {
       const p = desc.value;
       p.textContent = `counter change from ${val}  to ${oldVal}`
     })
-    return {counter, counterMax, desc};
+
+    function sayHello() {
+      alert('hello ')
+    }
+
+    function changeTest() {
+      console.log('运行了');
+      state.test = '改变了'
+    }
+    return {counter, counterMax, desc, sayHello, state, changeTest};
   }
 }
 // setup 中逻辑提出
