@@ -1,9 +1,18 @@
 <!--
  * @Author       : LiCai
  * @connect      : 1981824361@qq.com
+ * @Date         : 2021-10-12 14:36:10
+ * @LastEditors  : LiCai
+ * @LastEditTime : 2021-10-12 14:37:28
+ * @Description  : TODO
+ * @FilePath     : /VUESTU/Vue3版本/为什么v-if和v-for不建议用在同一标签.html
+-->
+<!--
+ * @Author       : LiCai
+ * @connect      : 1981824361@qq.com
  * @Date         : 2021-08-13 11:13:21
  * @LastEditors  : LiCai
- * @LastEditTime : 2021-10-12 14:51:38
+ * @LastEditTime : 2021-10-12 14:30:47
  * @Description  : TODO
  * @FilePath     : /VUESTU/Vue3版本/列表渲染v-for.html
 -->
@@ -13,17 +22,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>列表渲染 v-for循环</title>
+    <title>列表渲染 v-for v-if 不建议用在同一标签</title>
     <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
     <div id='app'>
-      <div style="">
         <ul v-for='item in filterList'>
             <li>{{item.name}}, 价格: {{item.price}}</li>
         </ul>
-        <button @click='add'>添加</button>
-      </div>
     </div>
     <script>
         const App = Vue.createApp({
@@ -40,14 +46,6 @@
                     return this.list.filter((item)=> item.name !== '香蕉')
                 }
             },
-            methods: {
-                add() {
-                    this.list.push({
-                        name: `${Math.random()}随机`,
-                        price: Math.random()
-                    })
-                }
-            }
         }).mount('#app');
     </script>
 </body>
